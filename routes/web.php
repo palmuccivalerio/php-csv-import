@@ -17,6 +17,14 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+// Rotte per l'import CSV
+Route::get('/csv-import', [CsvImportController::class, 'showForm'])->name('csv.import.form');
+Route::post('/csv-import', [CsvImportController::class, 'importCSV'])->name('csv.import');
+
+// Rotta per visualizzare i prodotti (bonus)
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
