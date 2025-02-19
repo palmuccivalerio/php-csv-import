@@ -25,7 +25,7 @@ Route::post('/csv-import', [CsvImportController::class, 'importCSV'])->name('csv
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 
-
+Route::post('/products/export', [ProductController::class, 'exportCsv'])->name('products.export');
 
 
 Route::middleware('auth')
