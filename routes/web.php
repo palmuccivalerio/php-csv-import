@@ -16,7 +16,7 @@ use App\Http\Controllers\ProductController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/', [CsvImportController::class, 'showForm'])->name('home');
 // Rotte per l'import CSV
 Route::get('/csv-import', [CsvImportController::class, 'showForm'])->name('csv.import.form');
 Route::post('/csv-import', [CsvImportController::class, 'importCSV'])->name('csv.import');
@@ -25,9 +25,7 @@ Route::post('/csv-import', [CsvImportController::class, 'importCSV'])->name('csv
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 Route::middleware('auth')
